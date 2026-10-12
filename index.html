@@ -7,143 +7,14 @@
   <meta name="description" content="Семь странных дней в НГОК — бесплатная браузерная визуальная новелла о колледже, друзьях и расписании, которого не существует.">
   <title>7 дней в НГОК — визуальная новелла</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="./pixel-art.js" defer></script>
   <script src="./battle.js" defer></script>
   <script src="./game.js" defer></script>
 </head>
 <body>
   <div id="app" class="app">
     <div id="world" class="world" data-scene="campus" data-light="sunset">
-      <svg class="world-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#344c85"/><stop offset=".52" stop-color="#ae7391"/><stop offset="1" stop-color="#f3b184"/></linearGradient>
-          <linearGradient id="nightSky" x2="0" y2="1"><stop stop-color="#111a39"/><stop offset="1" stop-color="#48517c"/></linearGradient>
-          <linearGradient id="campusWall" x2="0" y2="1"><stop stop-color="#a99ea8"/><stop offset="1" stop-color="#6b6e83"/></linearGradient>
-          <linearGradient id="hallWall" x2="0" y2="1"><stop stop-color="#8796aa"/><stop offset="1" stop-color="#414e67"/></linearGradient>
-          <linearGradient id="insideFloor" x2="0" y2="1"><stop stop-color="#60768e"/><stop offset="1" stop-color="#253348"/></linearGradient>
-          <linearGradient id="window" x2="0" y2="1"><stop stop-color="#ffe3ad"/><stop offset="1" stop-color="#caa2ac"/></linearGradient>
-          <radialGradient id="glow"><stop stop-color="#fff6c5" stop-opacity=".7"/><stop offset="1" stop-color="#fff6c5" stop-opacity="0"/></radialGradient>
-          <filter id="blur"><feGaussianBlur stdDeviation="23"/></filter>
-          <pattern id="windows" width="98" height="110" patternUnits="userSpaceOnUse"><rect x="20" y="18" width="54" height="72" rx="3" fill="#283f60"/><rect x="25" y="23" width="44" height="61" fill="url(#window)" opacity=".8"/><path d="M47 23V84M25 53H69" stroke="#52617a" stroke-width="5"/></pattern>
-          <pattern id="tiles" width="110" height="76" patternUnits="userSpaceOnUse"><path d="M0 0H110M0 76H110M0 0V76" fill="none" stroke="#c0d2dd" stroke-opacity=".15" stroke-width="3"/></pattern>
-        </defs>
-        <g id="campus-art" class="art-layer">
-          <rect width="1440" height="900" fill="url(#sky)"/>
-          <circle cx="1120" cy="206" r="183" fill="url(#glow)"/><circle cx="1120" cy="206" r="64" fill="#ffeac1" opacity=".85"/>
-          <path d="M0 550L130 490L236 552L340 497L489 545L655 475L804 538L952 492L1162 542L1282 481L1440 523V900H0" fill="#656b83" opacity=".58"/>
-          <rect x="0" y="575" width="1440" height="325" fill="#535b6b"/>
-          <path d="M0 655L1440 625V900H0" fill="#343c4d"/>
-          <path d="M0 738L1440 695" stroke="#a89a9e" stroke-width="4" opacity=".55"/>
-          <rect x="268" y="168" width="904" height="470" rx="8" fill="url(#campusWall)"/>
-          <path d="M247 169L746 97L1190 169Z" fill="#3e4663"/>
-          <rect x="295" y="206" width="850" height="335" fill="url(#windows)" opacity=".88"/>
-          <rect x="615" y="434" width="216" height="204" fill="#323d58"/>
-          <rect x="641" y="468" width="165" height="170" fill="#8294a7" opacity=".77"/>
-          <path d="M725 468V638" stroke="#39445e" stroke-width="9"/>
-          <rect x="640" y="252" width="182" height="64" rx="4" fill="#24314b"/>
-          <text x="731" y="296" text-anchor="middle" fill="#f3d7ab" font-family="sans-serif" font-size="39" letter-spacing="8">НГОК</text>
-          <path d="M495 638H952L1170 900H285Z" fill="#a8a4a4" opacity=".32"/>
-          <path d="M740 638L735 900" stroke="#e6d5c6" stroke-opacity=".3" stroke-width="5"/>
-          <g fill="#293f49"><rect x="74" y="445" width="33" height="352"/><rect x="1317" y="406" width="36" height="389"/></g>
-          <g fill="#334a4a"><circle cx="98" cy="420" r="121"/><circle cx="34" cy="477" r="87"/><circle cx="1342" cy="393" r="128"/><circle cx="1410" cy="480" r="93"/></g>
-          <g fill="#4b6965" opacity=".75"><circle cx="154" cy="393" r="80"/><circle cx="1312" cy="341" r="89"/></g>
-          <path d="M0 782Q250 730 490 820T1030 805T1440 760V900H0" fill="#1c3239" opacity=".4"/>
-        </g>
-        <g id="hall-art" class="art-layer">
-          <rect width="1440" height="900" fill="#313d54"/>
-          <path d="M0 0L420 162V591L0 900Z" fill="#526883"/><path d="M1440 0L1020 162V591L1440 900Z" fill="#536b83"/>
-          <path d="M0 0H1440L1020 162H420Z" fill="#29354c"/>
-          <path d="M0 900L420 591H1020L1440 900Z" fill="url(#insideFloor)"/>
-          <path d="M420 162H1020V591H420Z" fill="url(#hallWall)"/>
-          <rect x="591" y="277" width="258" height="314" fill="#27384f"/><rect x="611" y="295" width="218" height="296" fill="#46516a"/>
-          <path d="M720 295V591" stroke="#253549" stroke-width="8"/>
-          <path d="M300 0L420 162M1140 0L1020 162M0 900L420 591M1440 900L1020 591" stroke="#c1d2dd" stroke-opacity=".24" stroke-width="6"/>
-          <path d="M0 900L720 590L1440 900" fill="none" stroke="#e1eaf1" stroke-opacity=".09" stroke-width="7"/>
-          <rect x="79" y="246" width="224" height="455" fill="#2b3950"/><rect x="1137" y="246" width="224" height="455" fill="#2b3950"/>
-          <rect x="100" y="270" width="180" height="425" fill="#67758a"/><rect x="1157" y="270" width="180" height="425" fill="#69768b"/>
-          <rect x="119" y="308" width="140" height="172" fill="#b9b9a7" opacity=".43"/><rect x="1178" y="308" width="139" height="172" fill="#b9b9a7" opacity=".43"/>
-          <rect x="425" y="122" width="590" height="22" rx="11" fill="#fff4d6" opacity=".95"/>
-          <ellipse cx="720" cy="222" rx="370" ry="150" fill="url(#glow)" opacity=".4"/>
-          <path d="M0 900H1440" stroke="#d8dddd" stroke-opacity=".2" stroke-width="12"/>
-        </g>
-        <g id="class-art" class="art-layer">
-          <rect width="1440" height="900" fill="#677c91"/>
-          <rect x="0" y="0" width="1440" height="653" fill="#8295a8"/>
-          <rect x="120" y="109" width="660" height="386" rx="8" fill="#e1cabb"/>
-          <rect x="141" y="131" width="618" height="341" fill="#a8bfd0"/>
-          <path d="M450 131V472M141 308H759" stroke="#e1cabb" stroke-width="14"/>
-          <path d="M157 405Q335 329 440 377Q588 277 749 341V472H157" fill="#728e9e" opacity=".65"/>
-          <rect x="876" y="156" width="476" height="327" rx="10" fill="#354d59" stroke="#cfc6b5" stroke-width="18"/>
-          <text x="1115" y="262" font-family="sans-serif" font-size="38" fill="#c9d9c8" text-anchor="middle" opacity=".8">ПАРА № ?</text>
-          <path d="M951 340H1237M951 370H1152" stroke="#c8dccc" stroke-width="7" opacity=".5"/>
-          <path d="M0 652H1440V900H0" fill="#3e5066"/><path d="M0 652H1440" stroke="#d2b7ac" stroke-width="14"/>
-          <g fill="#394a60"><path d="M180 642H570L674 874H74Z"/><path d="M834 642H1231L1392 874H707Z"/></g>
-          <g fill="#9b8b81"><path d="M140 613H587L634 673H91Z"/><path d="M806 613H1248L1310 673H761Z"/></g>
-          <path d="M282 680L250 900M490 680L512 900M958 680L916 900M1192 680L1233 900" stroke="#19283b" stroke-width="14"/>
-          <circle cx="258" cy="210" r="125" fill="url(#glow)" opacity=".35"/>
-        </g>
-        <g id="cafe-art" class="art-layer">
-          <rect width="1440" height="900" fill="#685968"/>
-          <rect x="0" y="0" width="1440" height="650" fill="#997f80"/>
-          <rect x="140" y="113" width="450" height="345" fill="#e9c6ad"/>
-          <rect x="161" y="134" width="407" height="304" fill="#aaabb5"/>
-          <circle cx="393" cy="242" r="91" fill="url(#glow)"/>
-          <path d="M0 571H1440V900H0" fill="#4c4958"/>
-          <rect x="681" y="132" width="636" height="293" rx="16" fill="#645d62"/>
-          <rect x="718" y="171" width="165" height="119" rx="9" fill="#d3aa80"/>
-          <rect x="907" y="171" width="165" height="119" rx="9" fill="#d3aa80"/>
-          <rect x="1098" y="171" width="165" height="119" rx="9" fill="#d3aa80"/>
-          <rect x="632" y="414" width="762" height="245" rx="8" fill="#a78b83"/>
-          <rect x="622" y="407" width="772" height="40" rx="10" fill="#d3aea1"/>
-          <path d="M720 90V192M1002 90V192M1202 90V192" stroke="#343242" stroke-width="9"/>
-          <g fill="#f4dcb9"><ellipse cx="720" cy="193" rx="44" ry="22"/><ellipse cx="1002" cy="193" rx="44" ry="22"/><ellipse cx="1202" cy="193" rx="44" ry="22"/></g>
-          <path d="M100 698H615L698 772H34Z" fill="#d2aa9b"/><path d="M118 771V900M588 771V900" stroke="#2e3346" stroke-width="20"/>
-          <g fill="#f5e5ca"><path d="M252 674H325V714Q290 755 252 714Z"/><rect x="323" y="682" width="30" height="26" rx="12" fill="none" stroke="#f5e5ca" stroke-width="9"/></g>
-        </g>
-        <g id="roof-art" class="art-layer">
-          <rect width="1440" height="900" fill="url(#nightSky)"/>
-          <circle cx="1115" cy="197" r="92" fill="#fae5c7"/><circle cx="1150" cy="174" r="92" fill="#222e4f"/>
-          <g fill="#e2d8cf" opacity=".8"><circle cx="195" cy="110" r="3"/><circle cx="366" cy="187" r="3"/><circle cx="814" cy="118" r="4"/><circle cx="944" cy="243" r="2"/><circle cx="1289" cy="127" r="3"/><circle cx="620" cy="74" r="3"/></g>
-          <path d="M0 550L84 518V370H175V527H279V432H379V539H485V298H599V547H742V400H824V555H990V461H1122V545H1260V370H1350V528L1440 500V900H0" fill="#28334d"/>
-          <g fill="#edc69d" opacity=".56"><rect x="520" y="340" width="20" height="35"/><rect x="564" y="340" width="20" height="35"/><rect x="786" y="430" width="20" height="35"/><rect x="1302" y="401" width="23" height="41"/></g>
-          <path d="M0 637L1440 631V900H0" fill="#596477"/>
-          <rect x="0" y="597" width="1440" height="59" fill="#394356"/>
-          <path d="M83 656V900M342 656V900M606 656V900M870 656V900M1134 656V900" stroke="#253149" stroke-width="16"/>
-          <path d="M0 690H1440" stroke="#e9d8c9" stroke-opacity=".3" stroke-width="5"/>
-          <path d="M1180 639L1200 315L1250 638M1194 434H1234M1189 506H1241" fill="none" stroke="#292f45" stroke-width="12"/>
-        </g>
-        <g id="lab-art" class="art-layer">
-          <rect width="1440" height="900" fill="#1b2b43"/>
-          <path d="M0 0H1440L1200 210H240Z" fill="#253c55"/>
-          <path d="M0 900L240 210H1200L1440 900" fill="#24324a"/>
-          <path d="M240 210H1200V726H240Z" fill="#3a4863"/>
-          <rect x="296" y="270" width="310" height="334" rx="10" fill="#172c41"/>
-          <rect x="835" y="270" width="310" height="334" rx="10" fill="#172c41"/>
-          <g fill="#77c7d2" opacity=".86"><rect x="319" y="294" width="264" height="177" rx="4"/><rect x="858" y="294" width="264" height="177" rx="4"/></g>
-          <path d="M330 445L389 377L434 411L499 330L563 383M869 367L922 409L967 358L1029 395L1114 320" fill="none" stroke="#dff6db" stroke-width="7" opacity=".65"/>
-          <rect x="82" y="608" width="1276" height="64" fill="#697183"/><path d="M115 666L50 900M1323 666L1380 900" stroke="#141f30" stroke-width="30"/>
-          <g fill="#1c293a"><rect x="505" y="545" width="189" height="124" rx="9"/><rect x="743" y="545" width="189" height="124" rx="9"/></g>
-          <rect x="525" y="559" width="149" height="85" fill="#75bba8"/><rect x="763" y="559" width="149" height="85" fill="#74bed1"/>
-          <g fill="#f1d8a9" opacity=".8"><rect x="151" y="157" width="140" height="20" rx="10"/><rect x="1150" y="157" width="140" height="20" rx="10"/></g>
-        </g>
-        <g id="archive-art" class="art-layer">
-          <rect width="1440" height="900" fill="#152239"/>
-          <path d="M0 0H1440V900H0" fill="#28334a"/>
-          <rect x="120" y="70" width="1200" height="690" fill="#39475a"/>
-          <g fill="#1e2c40" stroke="#718395" stroke-width="9">
-            <rect x="156" y="111" width="268" height="593"/>
-            <rect x="455" y="111" width="268" height="593"/>
-            <rect x="753" y="111" width="268" height="593"/>
-            <rect x="1051" y="111" width="237" height="593"/>
-          </g>
-          <g stroke="#69849a" stroke-width="8"><path d="M156 260H424M156 408H424M156 556H424M455 260H723M455 408H723M455 556H723M753 260H1021M753 408H1021M753 556H1021M1051 260H1288M1051 408H1288M1051 556H1288"/></g>
-          <g fill="#97bcc0" opacity=".8"><rect x="201" y="181" width="174" height="26"/><rect x="201" y="339" width="174" height="26"/><rect x="512" y="339" width="170" height="26"/><rect x="803" y="497" width="167" height="26"/><rect x="1092" y="181" width="153" height="26"/></g>
-          <path d="M0 756H1440V900H0" fill="#1a2638"/>
-          <circle cx="720" cy="427" r="287" fill="url(#glow)" opacity=".12"/>
-          <rect x="628" y="350" width="184" height="256" rx="9" fill="#161f30" stroke="#8b9ca2" stroke-width="10"/>
-          <rect x="661" y="385" width="120" height="37" fill="#c59f7a" opacity=".74"/>
-          <text x="721" y="412" text-anchor="middle" fill="#25313c" font-size="25" font-family="sans-serif">07</text>
-        </g>
-      </svg>
+      <canvas id="pixelWorld" class="pixel-world" width="480" height="270" aria-hidden="true"></canvas>
       <div class="world-tint"></div>
       <div class="world-vignette"></div>
       <div class="film-grain"></div>
@@ -181,23 +52,7 @@
       <div class="chapter-stamp"><span id="chapterLabel">ДЕНЬ ПЕРВЫЙ</span><strong id="chapterTitle">Первый звонок</strong></div>
 
       <div id="portrait" class="portrait" hidden aria-hidden="true">
-        <svg viewBox="0 0 430 640" role="presentation">
-          <ellipse cx="213" cy="615" rx="188" ry="22" fill="#081625" opacity=".28"/>
-          <path class="char-hair-back" d="M91 301C43 196 73 80 181 55C310 13 370 138 351 289L377 484L75 484Z"/>
-          <path class="char-jacket" d="M74 450Q88 398 148 385L182 376L247 376L286 386Q344 399 362 451L405 640H25Z"/>
-          <path class="char-shirt" d="M160 390L210 478L263 392L242 371H182Z"/>
-          <path class="char-neck" d="M176 329H251V409Q214 447 176 408Z"/>
-          <ellipse class="char-ear" cx="106" cy="266" rx="23" ry="39"/>
-          <ellipse class="char-ear" cx="325" cy="266" rx="23" ry="39"/>
-          <path class="char-face" d="M108 192Q106 90 213 83Q332 83 326 192V287Q318 363 265 391Q215 421 169 390Q116 362 108 291Z"/>
-          <path class="char-hair-front" d="M103 244Q68 165 100 104Q143 21 246 57Q330 40 348 155Q348 203 323 244L300 170Q261 171 234 122Q198 184 118 189Z"/>
-          <path d="M147 262Q170 249 190 264M240 265Q260 252 282 264" stroke="#443b4c" stroke-width="7" stroke-linecap="round" fill="none"/>
-          <ellipse cx="168" cy="277" rx="7" ry="10" fill="#363142"/><ellipse cx="263" cy="277" rx="7" ry="10" fill="#363142"/>
-          <path d="M207 281L201 321Q213 329 227 321" stroke="#b77f7d" opacity=".58" stroke-width="5" fill="none"/>
-          <path d="M192 348Q215 363 239 347" stroke="#974f68" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <path class="char-jacket-detail" d="M75 450L150 391L211 484L282 388L359 449M211 485V640" fill="none" stroke-width="12" stroke-linecap="round"/>
-          <path d="M211 488L198 521L212 567L226 520Z" fill="#f5cc9f" opacity=".65"/>
-        </svg>
+        <canvas id="pixelPortrait" class="pixel-portrait" width="128" height="180" aria-hidden="true"></canvas>
         <span id="portraitTag" class="portrait-tag">ЛЕРА // АРТ</span>
       </div>
 
