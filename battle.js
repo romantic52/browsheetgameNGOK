@@ -117,7 +117,7 @@
       button.addEventListener("click",()=>answerQuestion(i));
       $("battleAnswers").append(button);
     });
-    render();$("battleAnswers button")?.focus();
+    render();$("battleAnswers").querySelector("button")?.focus();
   }
   function answerQuestion(index){
     if(!current||current.step!=="question")return;
