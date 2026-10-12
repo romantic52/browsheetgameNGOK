@@ -30,7 +30,8 @@ const story = {
   d1m: {day:1, scene:"hall", who:"misha", text:"Смотри. На старом плане этажа есть дверь, которой на новом плане нет. Это уже интересно!", next:"d1join"},
   d1l: {day:1, scene:"cafe", who:"lera", text:"Расписание можно игнорировать. Главное — никогда не оставаться в корпусе после последнего звонка. Проверено.", next:"d1join"},
   d1d: {day:1, scene:"class", who:"dasha", text:"Я Даша, староста. Список групп у меня есть. А вот твоего имени там почему-то нет. Очень смешно.", next:"d1join"},
-  d1join: {day:1, scene:"hall", time:"17:07", who:"", text:"Вечером свет в коридоре моргает. На пустой доске объявлений появляется запись мелом: «ОСТАЛОСЬ 6 ДНЕЙ».", next:"d2a"},
+  d1join: {day:1, scene:"hall", time:"17:07", who:"", text:"Вечером свет в коридоре моргает. На пустой доске объявлений появляется запись мелом: «ОСТАЛОСЬ 6 ДНЕЙ».", next:"d1battle"},
+  d1battle: {day:1, scene:"class", light:"glitch", time:"17:08", who:"misha", text:"А это что? На экране — ВНЕЗАПНАЯ КОНТРОЛЬНАЯ. Похоже, здесь придётся драться знаниями. Жми дальше!", challenge:"algebra", next:"d2a"},
   d2a: {day:2, scene:"class", light:"day", time:"09:00", who:"", text:"Вторник. Все ведут себя так, будто вчера ничего не случилось. Даже доска объявлений снова чистая.", next:"d2b"},
   d2b: {day:2, who:"dasha", text:"У нас лишняя пара в электронном журнале. Преподавателя нет, темы нет, но пропуск засчитают. Вот как это работает?", next:"d2c"},
   d2c: {day:2, who:"misha", text:"Я проверил исходник страницы. Кто-то добавил седьмой день в неделю. После воскресенья там опять понедельник.", next:"d2choice"},
@@ -42,7 +43,8 @@ const story = {
   d2m: {day:2, scene:"lab", who:"misha", text:"Так, пароль admin123 не подошёл. Вот это поворот. Но файл с историей изменений почему-то датирован завтрашним числом.", next:"d2join"},
   d2l: {day:2, scene:"cafe", who:"lera", text:"Ты можешь считать меня странной, но каждую осень я рисую одну и ту же афишу. И каждый раз забываю, куда её повесила.", next:"d2join"},
   d2d: {day:2, scene:"archive", who:"dasha", text:"Вот журнал за прошлый год. Группа та же. Преподаватели те же. И, кажется… наша фотография.", next:"d2join"},
-  d2join: {day:2, scene:"hall", light:"sunset", time:"17:07", who:"", text:"Последний звонок. В динамике слышится не мелодия, а чей-то тихий голос: «Пожалуйста, не повторяйте ошибку».", next:"d3a"},
+  d2join: {day:2, scene:"hall", light:"sunset", time:"17:07", who:"", text:"Последний звонок. В динамике слышится не мелодия, а чей-то тихий голос: «Пожалуйста, не повторяйте ошибку».", next:"d2battle"},
+  d2battle: {day:2, scene:"class", light:"glitch", time:"17:08", who:"lera", text:"О нет, английский! Учитель задаёт вопросы на языке Шекспира. Надеюсь, ты помнишь хотя бы «How are you?».", challenge:"grammar", next:"d3a"},
   d3a: {day:3, scene:"lab", light:"day", time:"10:35", who:"misha", text:"Среда. Компьютер номер семь сам включился. На рабочем столе папка «НЕ ОТКРЫВАТЬ». Ну ты же понимаешь, что мы сейчас сделаем.", next:"d3b"},
   d3b: {day:3, who:"", text:"В папке всего один файл. Он называется «семь_дней_до_выпуска.txt». Внутри — список знакомых имён и одно зачёркнутое.", next:"d3c"},
   d3c: {day:3, who:"lera", text:"Там было моё имя? Стой. Почему мне кажется, что мы уже задавали этот вопрос?", next:"d3choice"},
@@ -54,7 +56,8 @@ const story = {
   d3log: {day:3, scene:"lab", light:"glitch", who:"misha", text:"В логах семь одинаковых понедельников. И каждый раз запись обрывается в 17:07. Отлично, теперь я точно не усну.", next:"d3join"},
   d3copy: {day:3, scene:"lab", light:"glitch", who:"lera", text:"Сохрани мне. Если я забуду ещё раз, хотя бы останется доказательство, что мы знакомы.", next:"d3join"},
   d3safe: {day:3, scene:"hall", who:"dasha", text:"Хорошо, что сказал. Я позвоню куратору… Погоди. Почему в списке контактов номер куратора — мой собственный?", next:"d3join"},
-  d3join: {day:3, scene:"lab", light:"night", time:"17:07", who:"", text:"Все экраны одновременно загораются. На них появляется фотография: ваша компания стоит у колледжа. Подпись: «Воскресенье. Последний шанс».", next:"d4a"},
+  d3join: {day:3, scene:"lab", light:"night", time:"17:07", who:"", text:"Все экраны одновременно загораются. На них появляется фотография: ваша компания стоит у колледжа. Подпись: «Воскресенье. Последний шанс».", next:"d3battle"},
+  d3battle: {day:3, scene:"lab", light:"glitch", time:"17:08", who:"misha", text:"Система выдаёт ошибку 404 и запускает математический тест. Не знаю, что будет, если ошибёмся. Но это мы сейчас узнаем!", challenge:"monitor", next:"d4a"},
   d4a: {day:4, scene:"archive", light:"day", time:"12:20", who:"", text:"Четверг. В подвале корпуса вы находите архив, о котором никто не рассказывал на экскурсии.", next:"d4b"},
   d4b: {day:4, who:"dasha", text:"Здесь журналы посещаемости за десятки лет. Но в каждом из них есть страница с датой сегодняшнего дня.", next:"d4c"},
   d4c: {day:4, who:"artem", text:"А вот и экскурсанты. Меня Артём зовут. Если пришли искать выход из недели, то вы опоздали на несколько попыток.", next:"d4choice"},
@@ -66,7 +69,8 @@ const story = {
   d4m: {day:4, who:"artem", text:"Тогда ищите первую запись на сервере. Иногда ошибка — это просто сообщение, которое никто не прочитал.", next:"d4join"},
   d4l: {day:4, who:"artem", text:"Запоминайте лица. Расписание меняется, а чувства — не так просто. По крайней мере, я на это надеюсь.", next:"d4join"},
   d4d: {day:4, who:"artem", text:"Это хороший ответ. В прошлый раз вы ушли, оставив одного человека здесь. Именно поэтому неделя началась заново.", next:"d4join"},
-  d4join: {day:4, scene:"hall", light:"sunset", time:"17:06", who:"", text:"В кармане появляется чужой пропуск. Имя стёрто. На обратной стороне: «Встречаемся на крыше. Пятница».", next:"d5a"},
+  d4join: {day:4, scene:"hall", light:"sunset", time:"17:06", who:"", text:"В кармане появляется чужой пропуск. Имя стёрто. На обратной стороне: «Встречаемся на крыше. Пятница».", next:"d4battle"},
+  d4battle: {day:4, scene:"cafe", light:"glitch", time:"17:07", who:"dasha", text:"Перед всей группой придётся выступать. Только не сорвись: твоё терпение здесь важнее любого оружия!", challenge:"stage", next:"d5a"},
   d5a: {day:5, scene:"roof", light:"sunset", time:"16:52", who:"", text:"Пятница. Крыша почти пустая. Город шумит далеко внизу, а на парапете лежит старая фотография.", next:"d5b"},
   d5b: {day:5, who:"artem", text:"Мы все были здесь в прошлое воскресенье. Хотели встретить рассвет. Но в колледже начался пожар из-за короткого замыкания.", next:"d5c"},
   d5c: {day:5, who:"artem", text:"Все успели выйти. Кроме одного человека, который вернулся за списком оставшихся. Кто именно — память почему-то скрыла.", next:"d5choice"},
@@ -78,7 +82,8 @@ const story = {
   d5m: {day:5, scene:"lab", who:"misha", text:"Проверил. Сигнал тревоги выключили вручную. И сделали это уже после того, как все покинули здание.", next:"d5join"},
   d5l: {day:5, scene:"cafe", who:"lera", text:"Нашла альбом. На рисунке все стоят снаружи… а у окна на четвёртом этаже — ещё один силуэт.", next:"d5join"},
   d5d: {day:5, scene:"hall", who:"dasha", text:"Если получится вернуть тот день, мы сначала проверим людей, а потом документы. Никаких исключений.", next:"d5join"},
-  d5join: {day:5, scene:"roof", light:"night", time:"17:07", who:"", text:"Впервые за всю неделю звонок не звучит. Вместо него ветер приносит слова: «Вы почти вспомнили».", next:"d6a"},
+  d5join: {day:5, scene:"roof", light:"night", time:"17:07", who:"", text:"Впервые за всю неделю звонок не звучит. Вместо него ветер приносит слова: «Вы почти вспомнили».", next:"d5battle"},
+  d5battle: {day:5, scene:"class", light:"glitch", time:"17:09", who:"lera", text:"Пятница, а тут внезапный устный зачёт по английскому. Выдержишь разговор — сможем продолжить.", challenge:"oral", next:"d6a"},
   d6a: {day:6, scene:"campus", light:"day", time:"14:30", who:"", text:"Суббота. По расписанию колледж закрыт. Но главная дверь открывается, как только ты подходишь.", next:"d6b"},
   d6b: {day:6, scene:"hall", who:"lera", text:"Я помню. Мы обещали вернуться за ним. За Артёмом. Но дверь захлопнулась, и всё началось сначала.", next:"d6c"},
   d6c: {day:6, who:"artem", text:"Я не призрак, если ты об этом. Скорее… часть воспоминания, из которого никто не хочет уходить. Я застрял в этой неделе.", next:"d6choice"},
@@ -90,10 +95,12 @@ const story = {
   d6m: {day:6, scene:"lab", light:"night", who:"misha", text:"Система готова. Только не дай мне забыть пароль: «мы_возвращаемся_вместе». Да, с подчёркиваниями.", next:"d6join"},
   d6l: {day:6, scene:"cafe", light:"night", who:"lera", text:"Смотри на этот рисунок. Здесь есть выход, которого нет на планах. Я помнила его все семь дней.", next:"d6join"},
   d6d: {day:6, scene:"archive", light:"night", who:"dasha", text:"Пересчитала всех дважды. В этот раз никто не останется за дверью. Даже если снова поменяют расписание.", next:"d6join"},
-  d6join: {day:6, scene:"roof", light:"night", time:"23:59", who:"", text:"Полночь. Телефон вибрирует. Новое уведомление: «Воскресенье, 17:07. Последний звонок. Решение за вами».", next:"d7a"},
+  d6join: {day:6, scene:"roof", light:"night", time:"23:59", who:"", text:"Полночь. Телефон вибрирует. Новое уведомление: «Воскресенье, 17:07. Последний звонок. Решение за вами».", next:"d6battle"},
+  d6battle: {day:6, scene:"cafe", light:"glitch", time:"23:59", who:"dasha", text:"Выступление на защите проекта началось… и никак не закончится. Береги нервы, нам ещё понадобится твоя выдержка.", challenge:"defense", next:"d7a"},
   d7a: {day:7, scene:"campus", light:"sunset", time:"16:50", who:"", text:"Воскресенье. Всё повторяется: тот же свет, тот же ветер, те же шаги по лестнице.", next:"d7b"},
   d7b: {day:7, scene:"hall", who:"artem", text:"Я вспомнил. Я вернулся не за документами. Я вернулся, потому что думал, что внутри остался ты.", next:"d7c"},
-  d7c: {day:7, who:"", text:"В 17:06 раздаётся сигнал тревоги. Секундная стрелка будто вязнет в воздухе. Друзья ждут твоего решения.", next:"d7choice"},
+  d7c: {day:7, who:"", text:"В 17:06 раздаётся сигнал тревоги. Секундная стрелка будто вязнет в воздухе. Друзья ждут твоего решения.", next:"d7battle"},
+  d7battle: {day:7, scene:"hall", light:"glitch", time:"17:06", who:"artem", text:"Последнее испытание. Великая сессия собрала математику, английский и страх выступления в одном противнике. Мы в тебя верим.", challenge:"session", next:"d7choice"},
   d7choice: {day:7, scene:"hall", light:"glitch", who:"", text:"Впереди три дороги. И только одна минута, которой в этой неделе ещё не было.", choices:[
     {label:"Действовать вместе: вывести всех через запасной выход", to:"d7together", effects:{ready:1}},
     {label:"Довериться Артёму и остаться, чтобы восстановить память", to:"d7memory", effects:{mystery:1}},
@@ -105,7 +112,7 @@ const story = {
 };
 const $ = id => document.getElementById(id);
 const menu = $("menu"), play = $("play"), ending = $("ending"), modal = $("modalBackdrop");
-const stateDefaults = () => ({node:"intro", stats:{misha:0, lera:0, dasha:0, mystery:0, ready:0}, history:[], finished:false});
+const stateDefaults = () => ({node:"intro", stats:{misha:0, lera:0, dasha:0, mystery:0, ready:0}, completed:{}, history:[], finished:false});
 let state = stateDefaults(), busy = false, audio = null, audioOn = false, toastTimer;
 const canonicalNodes = new Set(Object.keys(story));
 function safeRead() {
@@ -114,7 +121,13 @@ function safeRead() {
     if (!saved || !canonicalNodes.has(saved.node) || !saved.stats || !Array.isArray(saved.history)) return null;
     const stats = {};
     for (const key of Object.keys(stateDefaults().stats)) stats[key] = Math.min(100, Math.max(0, Number(saved.stats[key]) || 0));
-    return {node:saved.node, stats, history:saved.history.filter(x => x && typeof x.text === "string").slice(-250), finished:!!saved.finished};
+    const completed = {};
+    if(saved.completed && typeof saved.completed==="object" && !Array.isArray(saved.completed)){
+      for(const id of ["algebra","grammar","monitor","stage","oral","defense","session"]){
+        if(saved.completed[id]===true)completed[id]=true;
+      }
+    }
+    return {node:saved.node, stats, completed, history:saved.history.filter(x => x && typeof x.text === "string").slice(-250), finished:!!saved.finished};
   } catch { return null; }
 }
 function save(notify=false) {
@@ -135,6 +148,7 @@ function openModal(title, content) {
 }
 function closeModal() { modal.hidden=true; }
 function showMenu() {
+  if(NGOKBattle.isActive())NGOKBattle.stop();
   save(); menu.hidden=false; play.hidden=true; ending.hidden=true;
   $("continueBtn").hidden = !safeRead() || state.finished;
   $("world").dataset.scene="campus"; $("world").dataset.light="sunset";
@@ -183,10 +197,21 @@ function remember(node) {
 }
 function move(to) { if(!canonicalNodes.has(to))return; state.node=to; render(); }
 function next() {
-  if(busy||modal.hidden===false||play.hidden)return;
+  if(busy||modal.hidden===false||play.hidden||NGOKBattle.isActive())return;
   const node=story[state.node];
   if(node.choices)return;
   remember(node);
+  if(node.challenge && !state.completed[node.challenge]){
+    save();
+    NGOKBattle.start(node.challenge, result=>{
+      state.completed[node.challenge]=true;
+      if(result.perfect) state.stats.mystery+=1;
+      save();
+      move(node.next);
+      toast(result.perfect?"Идеальная победа! +1 к разгадке":"Испытание пройдено!");
+    }, ()=>showMenu());
+    return;
+  }
   if(node.end){finish(node.end);return;}
   if(node.next)move(node.next);
 }
@@ -279,7 +304,7 @@ $("modalCloseBtn").onclick=closeModal;
 modal.addEventListener("click",e=>{if(e.target===modal)closeModal();});
 document.addEventListener("keydown",e=>{
   if(!modal.hidden){if(e.key==="Escape")closeModal();return;}
-  if(play.hidden)return;
+  if(NGOKBattle.isActive()||play.hidden)return;
   if(["Space","Enter"].includes(e.code) && !e.repeat){
     if(e.target.closest("button"))return;
     e.preventDefault();next();
