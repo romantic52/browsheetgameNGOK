@@ -289,3 +289,6 @@ kbd { padding: 2px 5px; border: 1px solid #69727d; border-radius: 3px; font: inh
  .battle-main-action strong { font-size: .83rem; }
  .battle-footer { font-size: .57rem; }
 }
+
+.training-buttons { display: grid; gap: 11px; margin-top: 15px; }
+.training-buttons .btn { width: 100%; text-align: left; justify-content: flex-start; min-height: 48px; }
