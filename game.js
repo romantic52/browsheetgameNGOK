@@ -149,7 +149,8 @@ function openModal(title, content) {
 function closeModal() { modal.hidden=true; }
 function showMenu() {
   if(NGOKBattle.isActive())NGOKBattle.stop();
-  save(); menu.hidden=false; play.hidden=true; ending.hidden=true;
+  if(!play.hidden||!ending.hidden)save();
+  menu.hidden=false; play.hidden=true; ending.hidden=true;
   $("continueBtn").hidden = !safeRead() || state.finished;
   $("world").dataset.scene="campus"; $("world").dataset.light="sunset";
 }
@@ -295,6 +296,27 @@ $("homeBtn").onclick=showMenu;
 $("nextBtn").onclick=next;
 $("dialogue").addEventListener("click",e=>{if(!e.target.closest("button"))next();});
 $("aboutBtn").onclick=showAbout;
+$("trainingBtn").onclick=()=>{
+  const wrap=document.createElement("div"), intro=document.createElement("p"), options=document.createElement("div");
+  intro.textContent="Выбери предмет и попробуй бой без изменения сюжетного сохранения. Победа или поражение здесь ни на что не влияют.";
+  options.className="training-buttons";
+  for(const [id,label] of [["algebra","∑ Математика"],["grammar","ABC Английский"],["stage","! Терпение на выступлении"],["session","7 Финальная сессия"]]){
+    const btn=document.createElement("button");btn.type="button";btn.className="btn btn-ghost";btn.textContent=label;
+    btn.addEventListener("click",()=>{
+      closeModal();
+      NGOKBattle.start(id,()=>{
+        NGOKBattle.stop();
+        menu.hidden=false;play.hidden=true;ending.hidden=true;
+        toast("Тренировочный бой пройден!");
+      },()=>{
+        menu.hidden=false;play.hidden=true;ending.hidden=true;
+      });
+    });
+    options.append(btn);
+  }
+  wrap.append(intro,options);openModal("ТРЕНИРОВОЧНАЯ",wrap);
+};
+
 $("historyBtn").onclick=showHistory;
 $("soundBtn").onclick=toggleSound;
 $("saveBtn").onclick=()=>save(true);
