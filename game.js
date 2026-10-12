@@ -271,6 +271,32 @@ function showHistory() {
 function showAbout() {
   const wrap=document.createElement("div");
   wrap.innerHTML="<p><strong>«7 дней в НГОК»</strong> — оригинальная неофициальная браузерная визуальная новелла про колледж, странное расписание и друзей, с которыми можно пройти даже сквозь петлю времени.</p><p>Семь сюжетных дней, выборы, отношения с персонажами, несколько концовок и автоматическое сохранение прогресса в браузере.</p><p>Управление: клик или пробел — следующая реплика, цифры 1–3 — выбор, Esc — закрыть окно. Музыка/звуковая атмосфера включается вручную.</p><p><small>Это фанатский художественный проект. Персонажи и события вымышлены. Не является официальным проектом колледжа и не связан с создателями других визуальных новелл.</small></p>";
+  const note=document.createElement("p");
+  note.textContent="Пиксельный стиль нарисован вручную из прямоугольников на сетке 480 × 270, включая стилизованный вход НГОК. Можно сохранить исходную растровую сцену в PNG и редактировать её попиксельно.";
+  wrap.append(note);
+  const exportButton=document.createElement("button");
+  exportButton.className="btn btn-primary";exportButton.type="button";
+  exportButton.textContent="Сохранить рисунок НГОК в PNG ↓";
+  exportButton.onclick=()=>{
+    const source=$("pixelWorld");
+    if(!source){toast("Рисунок недоступен");return;}
+    const download=url=>{
+      const link=document.createElement("a");
+      link.href=url;link.download="ngok-pixel-campus-480x270.png";
+      document.body.append(link);link.click();link.remove();
+    };
+    if(typeof source.toBlob==="function"){
+      source.toBlob(blob=>{
+        if(!blob){toast("Не удалось экспортировать PNG");return;}
+        const url=URL.createObjectURL(blob);
+        download(url);
+        setTimeout(()=>URL.revokeObjectURL(url),3000);
+      },"image/png");
+    }else{
+      try{download(source.toDataURL("image/png"));}catch{toast("PNG недоступен в этом браузере");}
+    }
+  };
+  wrap.append(exportButton);
   openModal("О нашей истории",wrap);
 }
 function toggleSound() {
