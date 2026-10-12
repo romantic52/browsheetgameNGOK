@@ -292,3 +292,96 @@ kbd { padding: 2px 5px; border: 1px solid #69727d; border-radius: 3px; font: inh
 
 .training-buttons { display: grid; gap: 11px; margin-top: 15px; }
 .training-buttons .btn { width: 100%; text-align: left; justify-content: flex-start; min-height: 48px; }
+
+/* =========================================================================
+   7 ДНЕЙ В НГОК — HAND-PIXELED VISUAL LANGUAGE
+   Source art is deliberately painted onto 480×270 and 128×180 pixel grids.
+   ========================================================================= */
+:root {
+  --acid:#ffdc78;
+  --glass:rgba(19,30,49,.94);
+}
+.world .pixel-world{
+  display:block;position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;image-rendering:pixelated;image-rendering:crisp-edges;
+  background:#263b52;z-index:0;
+}
+.world .world-tint,.world .world-vignette,.world .film-grain {display:none;}
+.world-art {display:none;}
+.portrait {
+  width:min(38vw,450px); height:min(68vh,620px);
+  filter:drop-shadow(10px 10px 0 rgba(15,23,41,.65));
+}
+.portrait .pixel-portrait{
+  display:block;width:100%;height:100%;
+  object-fit:contain;object-position:center bottom;
+  image-rendering:pixelated;
+}
+.portrait svg{display:none;}
+.portrait-tag {
+  bottom:28px;right:-20px;
+  background:#18283d;border:3px solid #ffdc78;border-radius:0;
+  box-shadow:5px 5px 0 #151d30;font:800 .67rem "Courier New",monospace;
+}
+.menu {text-shadow:2px 2px 0 rgba(17,26,42,.45);}
+.menu h1 {font-family:"Courier New",monospace;font-weight:900;letter-spacing:-.088em;line-height:1.06;
+  text-shadow:6px 6px 0 #1c2a43,10px 10px 0 #293950;}
+.menu h1 em {color:#ffdc78;}
+.menu-kicker,.brand,.menu-counter,.menu-subtitle,.menu-footnote,.btn,
+.hud,.dialogue,.chapter-stamp,.day-badge,.portrait-tag,.choice,
+.ending,.modal,.toast {font-family:"Courier New",monospace;}
+.brand-star {border-radius:0;box-shadow:3px 3px 0 #1c293e;}
+.menu-rule {height:5px;background:#ffdc78;box-shadow:5px 5px 0 #1c293e;}
+.menu-kicker,.brand,.chapter-stamp span,.day-badge,.dialogue-head {font-weight:900;}
+.btn {border-radius:0;border-width:3px;box-shadow:5px 5px 0 #151e30;}
+.btn:hover {transform:translate(2px,2px);box-shadow:3px 3px 0 #151e30;}
+.btn-text {box-shadow:none;background:#17263bc9;border-color:#a7bbca;}
+.dialogue {
+  border:4px solid #d7dcd5;border-left:9px solid #ffdc78;
+  box-shadow:9px 9px 0 #131c30;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  background:#192840f2;
+}
+.dialogue-head {font-size:.92rem;}
+.dialogue-time {color:#ffdc78;}
+#dialogueText {font-size:clamp(1.0rem,1.35vw,1.24rem);line-height:1.59;font-weight:700;}
+.next-btn {width:35px;height:35px;border-radius:0;border:3px solid #ffdc78;background:#152439;}
+.day-badge {border:3px solid #ffdc78;background:#16243b;}
+.hud-mark,.hud-actions button,.hud-mark span {font-family:"Courier New",monospace;font-weight:900;}
+.hud-mark {background:#192a45d6;border:3px solid #d5dfdf;padding:6px 9px;}
+.hud-actions button {border-radius:0;background:#192a45d6;border:2px solid #9cabb4;}
+.hud-actions button:hover {border-color:#ffdc78;}
+.choice {border:4px solid #e9e4d9;background:#182840;box-shadow:6px 6px 0 #102035;
+  backdrop-filter:none;font-family:"Courier New",monospace;font-size:1.02rem;}
+.choice:hover,.choice:focus-visible {border-color:#ffdc78;background:#344c62;transform:translateX(5px);}
+.progress span{height:5px;border-radius:0;box-shadow:2px 2px 0 #18293c;}
+.ending-card,.modal {border:4px solid #e1e4e0;box-shadow:8px 8px 0 #142138;backdrop-filter:none;}
+.ending-card {background:#172840f5;}
+.icon-close {font-family:"Courier New",monospace;}
+.battle {font-family:"Courier New",monospace;}
+.battle .battle-wordmark,.battle .battle-headline,.battle .battle-status-title,
+.battle .battle-enemy-readout h3,.battle .battle-question,.battle .battle-result-button,
+.battle .battle-main-action strong,.battle .battle-turn,.battle .battle-label,.battle .battle-stamp,
+.battle .battle-answer-num {font-family:"Courier New",monospace; font-weight:900;}
+.battle .battle-headline {letter-spacing:-.065em;}
+.battle .battle-symbol-wrap,.battle .battle-enemy-symbol {image-rendering:pixelated;}
+.battle .battle-main-action,.battle .battle-answer,.battle .battle-result-button,
+.battle .battle-exit {border-radius:0;box-shadow:4px 4px 0 #11131d;}
+.battle .battle-status,.battle .battle-action-box {border-radius:0;}
+.battle .battle-enemy-symbol {font-family:"Courier New",monospace;}
+@media(max-width:700px) {
+  .menu h1 {font-size:clamp(3rem,11vw,5rem);letter-spacing:-.1em;}
+  .menu-subtitle {max-width:305px;font-weight:800;font-size:.87rem;}
+  .brand {max-width:300px;line-height:1.5;}
+  .portrait {width:min(56vw,280px);height:min(58vh,420px);bottom:204px;right:2vw;}
+  .portrait-tag {right:0;bottom:11px;font-size:.5rem;border-width:2px;}
+  .dialogue {bottom:32px;border-width:3px;border-left-width:6px;padding:15px;box-shadow:4px 4px 0 #131c30;}
+  #dialogueText {font-size:.91rem;line-height:1.5;}
+  .choice {font-size:.9rem;border-width:3px;}
+  .chapter-stamp strong {font-size:1rem;}
+  .hud-mark {padding:4px 7px;}
+}
+@media(max-width:400px) {
+  .menu h1 {font-size:clamp(2.6rem,11vw,3.8rem);}
+  .portrait {height:min(45vh,340px);bottom:215px;}
+}
