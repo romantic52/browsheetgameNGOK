@@ -7,6 +7,7 @@
   <meta name="description" content="Семь странных дней в НГОК — бесплатная браузерная визуальная новелла о колледже, друзьях и расписании, которого не существует.">
   <title>7 дней в НГОК — визуальная новелла</title>
   <link rel="stylesheet" href="./styles.css">
+  <script src="./battle.js" defer></script>
   <script src="./game.js" defer></script>
 </head>
 <body>
@@ -215,6 +216,59 @@
 
       <div class="progress" aria-label="Прогресс по дням" id="progress"></div>
     </main>
+
+
+    <section id="battle" class="battle" hidden aria-label="Учебный бой">
+      <div class="battle-cuts" aria-hidden="true"></div>
+      <div class="battle-shell">
+        <header class="battle-heading">
+          <div class="battle-wordmark"><span class="battle-marker">✳</span> 7 ДНЕЙ В НГОК <span class="battle-verse">/ BATTLE MODE</span></div>
+          <button id="battleExitBtn" type="button" class="battle-exit">← ВЕРНУТЬСЯ В МЕНЮ</button>
+        </header>
+        <div class="battle-topline">
+          <p id="battleLabel" class="battle-label">ПОНЕДЕЛЬНИК · МАТЕМАТИКА</p>
+          <span id="battleTurn" class="battle-turn">ХОД 01</span>
+        </div>
+        <h2 class="battle-headline">ВЫЗОВ <em>ПРИНЯТ!</em></h2>
+        <div class="battle-arena">
+          <div class="battle-opponent">
+            <span class="battle-stamp">ОБНАРУЖЕНО ИСПЫТАНИЕ</span>
+            <div class="battle-symbol-wrap"><div id="battleEnemySymbol" class="battle-enemy-symbol">∑</div></div>
+            <div class="battle-enemy-readout">
+              <span class="battle-cap">ПРОТИВНИК / УЧЕБНАЯ ПРОБЛЕМА</span>
+              <h3 id="battleEnemyName">КОНТРОЛЬНАЯ</h3>
+              <div class="battle-meter-row"><span>СТОЙКОСТЬ</span><strong id="battleEnemyHP">64/64</strong></div>
+              <div class="battle-meter"><div id="battleEnemyBar" class="battle-meter-fill enemy"></div></div>
+            </div>
+          </div>
+          <div class="battle-controls">
+            <div class="battle-status">
+              <div class="battle-status-title">ТВОЁ СОСТОЯНИЕ <span>STUDENT LV. 07</span></div>
+              <div class="battle-meter-row"><span>♥ НЕРВЫ</span><strong id="battlePlayerHP">100/100</strong></div>
+              <div class="battle-meter"><div id="battlePlayerHPBar" class="battle-meter-fill nerves"></div></div>
+              <div class="battle-meter-row"><span>✦ ЭНЕРГИЯ</span><strong id="battlePlayerSP">4/6</strong></div>
+              <div class="battle-meter"><div id="battlePlayerSPBar" class="battle-meter-fill energy"></div></div>
+            </div>
+            <div class="battle-action-box">
+              <span id="battleType" class="battle-type">МАТЕМАТИКА</span>
+              <p id="battleIntro" class="battle-intro">Отвечай на вопросы и побеждай.</p>
+              <div id="battleActions" class="battle-actions">
+                <button id="battleActionAttack" type="button" class="battle-main-action">01 <strong>АТАКА</strong><span>Ответить на вопрос ↗</span></button>
+                <button id="battleActionSkill" type="button" class="battle-main-action">02 <strong>НАВЫК</strong><span>Подсказка + сильный удар (2 ✦)</span></button>
+                <button id="battleActionRest" type="button" class="battle-main-action">03 <strong>ПЕРЕДЫШКА</strong><span>Восстановить нервы и энергию</span></button>
+              </div>
+              <div id="battleQuestionPanel" class="battle-question-panel" hidden>
+                <p id="battleQuestion" class="battle-question"></p>
+                <div id="battleAnswers" class="battle-answers"></div>
+                <p id="battleResult" class="battle-feedback" aria-live="polite"></p>
+                <button id="battleResultButton" type="button" class="battle-result-button" hidden>Следующий ход →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="battle-footer">ТВОЯ ГЛАВНАЯ СИЛА — <strong>ЗНАНИЯ И ХОЛОДНАЯ ГОЛОВА.</strong> <span>↗ NGOK / RPG</span></p>
+      </div>
+    </section>
 
     <section id="ending" class="ending" hidden>
       <div class="ending-card">
